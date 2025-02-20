@@ -31,8 +31,8 @@ def binary_search(list, item):
 
 if __name__ =='__main__':
     mylist = []
-    rng = 100000000
-    print(math.log2(rng))
+    rng = 1000
+    #print(math.log2(rng))
     for i in range(int(rng)):
         mylist.append(i+1)
     print(f"{binary_search(mylist, random.randint(1,rng))}, log2({rng})={math.log2(rng)}\n")
