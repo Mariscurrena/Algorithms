@@ -1,4 +1,6 @@
 import random
+import time
+from text_format import formats as fmt
 
 def sum(arr):
     ## Base Case
@@ -13,5 +15,9 @@ if __name__ == '__main__':
     size = 10
     for i in range(size):
         arr.append(random.randint(1,100))
-    print(f"Original array is: {arr}")
-    print(f"Array summatory value is: {sum(arr)}\n\n")
+    print(f"{fmt.red}Original array is: {arr}{fmt.ends}")
+    start = time.time()
+    print(f"{fmt.green}Array summatory value is: {sum(arr)}{fmt.ends}")
+    end = time.time()
+    duration = end - start
+    print(f"{fmt.yellow}----> DyC lates: {duration} seconds.{fmt.ends}\n\n")

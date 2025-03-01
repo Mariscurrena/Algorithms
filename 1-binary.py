@@ -11,6 +11,8 @@
 import random
 import math
 import os
+import time
+from text_format import formats as fmt
 os.system('cls')
 #### Binary Search
 def binary_search(list, item):
@@ -35,4 +37,9 @@ if __name__ =='__main__':
     #print(math.log2(rng))
     for i in range(int(rng)):
         mylist.append(i+1)
-    print(f"{binary_search(mylist, random.randint(1,rng))}, log2({rng})={math.log2(rng)}\n")
+    print(f"{fmt.red}Original Array: {mylist}{fmt.ends}")
+    start = time.time()
+    print(f"{fmt.green}{binary_search(mylist, random.randint(1,rng))}, log2({rng})={math.log2(rng)}{fmt.ends}")
+    end = time.time()
+    duration = end - start
+    print(f"{fmt.yellow}----> Binary Search algorithm lates: {duration} seconds.{fmt.ends}\n")
