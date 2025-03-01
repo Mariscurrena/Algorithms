@@ -2,6 +2,8 @@
 #### Searching in the list and then adding to another sorted list
 #### O(nxn) = O(n^2) It is not so fast
 import random
+import time
+from text_format import formats as fmt
 #### Look into all the original list for the smallest value O(n)
 def smallestfinding(arr):
     smallest = arr[0]
@@ -22,8 +24,12 @@ def sortselection(arr):
 
 if __name__ == '__main__':
     arr = []
-    size = 20 #O(n^2) = O(20^2) = 400
+    size = 100 #O(n^2) = O(20^2) = 400
     for i in range(size):
         arr.append(random.randint(1,100))
-    print(f"Original list is: {arr}")
-    print(f"Sorted list is:   {sortselection(arr)}\n")
+    print(f"{fmt.red}Original list is: {arr}{fmt.ends}")
+    start = time.time()
+    print(f"{fmt.green}Sorted list is:   {sortselection(arr)}{fmt.ends}\n")
+    end = time.time()
+    duration = end - start
+    print(f"{fmt.yellow}----> Selectionsort algorithm lates: {duration} seconds.{fmt.ends}")
